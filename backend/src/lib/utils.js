@@ -1,0 +1,26 @@
+require('dotenv').config();
+const cloudinary = require('cloudinary').v2;
+const jwt = require('jsonwebtoken');
+const generateToken = (userId, res) => {
+    const token = jwt.sign({ userId }, process.env.JWT_SECRET_KEY, { expiresIn: "7d" });
+
+    res.cookie("jwt_token", token, {
+        maxAge: 7 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+        sameSite: "strict",
+        secure: process.env.NODE_ENV !== "development",
+    });
+
+    return token;
+}
+
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+module.exports = {
+    generateToken: generateToken,
+    cloudinary: cloudinary
+};
