@@ -14,6 +14,7 @@ import { app, server } from "./lib/socket.io.js";
 
 const PORT = process.env.PORT || 3000;
 const __dirname = path.resolve();
+connectDB();
 
 app.use(cookieParser());
 app.use(express.json({ limit: "100mb" }));
