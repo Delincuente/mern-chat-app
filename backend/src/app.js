@@ -19,7 +19,7 @@ connectDB();
 app.use(cookieParser());
 app.use(express.json({ limit: "100mb" }));
 app.use(cors({
-    origin: process.env.CLIENT_URL,
+    origin: "http://localhost:5173",
     credentials: true,
 }))
 app.use((req, res, next) => {
