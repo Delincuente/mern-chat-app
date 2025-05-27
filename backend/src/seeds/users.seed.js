@@ -99,7 +99,7 @@ const seedUsers = async (req, res) => {
     ];
 
     try {
-        for (i = 0; i < users.length; i++) {
+        for (let i = 0; i < users.length; i++) {
             const user = users[i];
             const salt = await bcrypt.genSalt(10);
             const hashedPassword = await bcrypt.hash(user.password, salt);
