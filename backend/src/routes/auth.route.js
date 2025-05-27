@@ -1,7 +1,9 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const authController = require("../controllers/auth.controller");
-const { protectRoute } = require("../middleware/auth.middleware");
+
+import authController from "../controllers/auth.controller.js";
+import { protectRoute } from "../middleware/auth.middleware.js";
+
 
 router.post("/signup", authController.signup);
 router.post("/login", authController.login);

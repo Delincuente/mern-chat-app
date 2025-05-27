@@ -1,5 +1,5 @@
-const bcrypt = require("bcrypt");
-const User = require("../models/user.model");
+import bcrypt from "bcrypt";
+import User from "../models/user.model.js";
 
 const seedUsers = async (req, res) => {
     const users = [

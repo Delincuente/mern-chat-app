@@ -1,8 +1,9 @@
-const bcrypt = require("bcrypt");
-const User = require("../models/user.model");
-const Message = require("../models/message.model");
-const Utils = require("../lib/utils");
-const { sendMessageSocket } = require("../lib/socket.io");
+import bcrypt from "bcrypt";
+import User from "../models/user.model.js";
+import Message from "../models/message.model.js";
+import Utils from "../lib/utils.js";
+import { sendMessageSocket } from "../lib/socket.io.js";
+
 
 const getUsersList = async (req, res) => {
     try {

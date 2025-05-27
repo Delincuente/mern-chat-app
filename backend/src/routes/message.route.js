@@ -1,7 +1,8 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const messageController = require("../controllers/message.controller");
-const { protectRoute } = require("../middleware/auth.middleware");
+
+import messageController from "../controllers/message.controller.js";
+import { protectRoute } from "../middleware/auth.middleware.js";
 
 router.get("/users", protectRoute, messageController.getUsersList);
 router.get("/:id", protectRoute, messageController.getMessages);

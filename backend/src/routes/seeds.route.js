@@ -1,6 +1,7 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const seeds = require("../seeds/users.seed");
+
+import seeds from "../seeds/users.seed.js";
 
 router.get("/users", seeds.seedUsers);
-module.exports = router;
+export default router;

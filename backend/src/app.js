@@ -1,14 +1,17 @@
-require("dotenv").config();
-const express = require("express");
-const cookieParser = require("cookie-parser");
-const cors = require("cors");
-const path = require("path")
-const connectDB = require("./lib/db");
-const authRoutes = require("./routes/auth.route");
-const messageRoutes = require("./routes/message.route");
-const seedsRoutes = require("./routes/seeds.route");
-const { app, server } = require("./lib/socket.io");
-connectDB();
+import dotenv from "dotenv";
+dotenv.config();
+
+import express from "express";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import path from "path";
+
+import connectDB from "./lib/db.js";
+import authRoutes from "./routes/auth.route.js";
+import messageRoutes from "./routes/message.route.js";
+import seedsRoutes from "./routes/seeds.route.js";
+import { app, server } from "./lib/socket.io.js";
+
 const PORT = process.env.PORT || 3000;
 const __dirname = path.resolve();
 

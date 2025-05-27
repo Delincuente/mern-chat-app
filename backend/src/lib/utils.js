@@ -1,6 +1,8 @@
-require('dotenv').config();
-const cloudinary = require('cloudinary').v2;
-const jwt = require('jsonwebtoken');
+import dotenv from "dotenv";
+dotenv.config();
+import { v2 as cloudinary } from "cloudinary";
+import jwt from "jsonwebtoken";
+
 const generateToken = (userId, res) => {
     const token = jwt.sign({ userId }, process.env.JWT_SECRET_KEY, { expiresIn: "7d" });
 
