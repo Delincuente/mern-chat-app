@@ -114,4 +114,4 @@ const seedUsers = async (req, res) => {
     }
 };
 
-module.exports = { seedUsers };
+export default { seedUsers };

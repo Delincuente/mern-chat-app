@@ -39,4 +39,4 @@ const sendMessageSocket = (messageData) => {
     }
 };
 
-module.exports = { app, server, io, sendMessageSocket };
+export default { app, server, io, sendMessageSocket };

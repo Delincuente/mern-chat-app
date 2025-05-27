@@ -111,10 +111,10 @@ const checkAuth = (req, res) => {
     }
 };
 
-module.exports = {
+export default {
     signup: signup,
     login: login,
     logout: logout,
     updateProfile: updateProfile,
     checkAuth: checkAuth
-}
+};

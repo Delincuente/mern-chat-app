@@ -37,7 +37,7 @@ const sendMessage = async (req, res) => {
         const { text, image } = req.body;
         const loginId = req.user._id;
         const { id: receiverId } = req.params;
-        
+
         let imageUrl;
         if (image) {
             const uploadResponse = await Utils.cloudinary.uploader.upload(image);
@@ -63,8 +63,8 @@ const sendMessage = async (req, res) => {
     }
 };
 
-module.exports = {
+export default {
     getUsersList: getUsersList,
     getMessages: getMessages,
     sendMessage: sendMessage
-}
+};

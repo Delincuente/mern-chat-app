@@ -22,7 +22,7 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-module.exports = {
+export default {
     generateToken: generateToken,
     cloudinary: cloudinary
 };
