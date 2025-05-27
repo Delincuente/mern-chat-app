@@ -5,9 +5,9 @@ import express from "express";
 import http from "http";
 import { Server } from "socket.io";
 
-const app = express();
-const server = http.createServer(app);
-const io = new Server(server, {
+export const app = express();
+export const server = http.createServer(app);
+export const io = new Server(server, {
     cors: {
         origin: [process.env.CLIENT_URL]
     }
@@ -31,12 +31,10 @@ io.on("connection", (socket) => {
     });
 });
 
-const sendMessageSocket = (messageData) => {
+export const sendMessageSocket = (messageData) => {
     const socketId = userSocketMap[messageData.receiverId];
     if (socketId) {
         io.to(socketId).emit("newMessage", messageData);
         console.log("Send message:...", socketId)
     }
 };
-
-export default { app, server, io, sendMessageSocket };
